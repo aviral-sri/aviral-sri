@@ -1,0 +1,38 @@
+[
+  {
+    "title": "SIH 2025 Drone-Based Disaster Management",
+    "description": "Edge-AI system with real-time perception and hardware-software integration for disaster response. Finalist at Smart India Hackathon 2025.",
+    "github": "",
+    "tags": ["Edge AI", "Computer Vision", "Drone Automation", "Raspberry Pi", "Real-time Processing"]
+  },
+  {
+    "title": "PyQubit",
+    "description": "Open-source Python quantum computing library published on PyPI with 500+ downloads. Simplifies quantum algorithm development and simulation.",
+    "github": "https://github.com/yourusername/pyqubit",
+    "tags": ["Quantum Computing", "Python", "Open Source"]
+  },
+  {
+    "title": "NightOwls",
+    "description": "Low-light computer vision system for enhanced image processing and object detection in challenging lighting conditions.",
+    "github": "",
+    "tags": ["Computer Vision", "Image Processing", "Low-light Enhancement"]
+  },
+  {
+    "title": "Goal-Based Self-Driving Car Prototype",
+    "description": "Autonomous vehicle prototype with goal-oriented navigation and real-time decision making using computer vision.",
+    "github": "",
+    "tags": ["Autonomous Systems", "Computer Vision", "Path Planning"]
+  },
+  {
+    "title": "Custom Knowledge LLM (Tony Stark Edition)",
+    "description": "Fine-tuned language model with custom knowledge base and personality. Demonstrates LLM customization and deployment.",
+    "github": "",
+    "tags": ["LLM", "NLP", "Machine Learning"]
+  },
+  {
+    "title": "Neuronote",
+    "description": "AI-powered Chrome extension for intelligent note-taking and content summarization using machine learning.",
+    "github": "",
+    "tags": ["Chrome Extension", "NLP", "JavaScript"]
+  }
+]
