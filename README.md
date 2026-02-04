@@ -1,255 +1,130 @@
-# Aviral Srivastava - Portfolio
+<!-- HERO BANNER -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=230&section=header&text=Aviral%20Srivastava&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38" />
+</p>
 
-A clean, scalable, engineering-focused portfolio built with pure HTML, CSS, and JavaScript. No frameworks, no build tools, no lock-in.
+<p align="center">
+  <b>Machine Learning Engineer · Computer Vision · Edge AI · Quantum Computing</b><br>
+  Building systems that actually run in the real world.
+</p>
 
-## 🎯 Philosophy
-
-This portfolio follows an **engineering-first** approach:
-- Content is data-driven (JSON files)
-- GitHub integration is fully automated
-- LinkedIn posts use a manual fallback (because LinkedIn's API is restricted)
-- Clean separation of structure (HTML), style (CSS), and behavior (JS)
-- Zero dependencies, zero build steps
-
-## 📁 Project Structure
-
-```
-portfolio/
-│
-├── index.html              # Main HTML structure
-│
-├── css/
-│   └── style.css          # All styling (dark theme, technical aesthetic)
-│
-├── js/
-│   ├── main.js            # Profile and projects loader
-│   ├── github.js          # GitHub API integration
-│   └── linkedin.js        # LinkedIn posts loader
-│
-├── data/
-│   ├── profile.json       # Your profile information
-│   ├── projects.json      # Your projects
-│   └── linkedin_posts.json # Featured LinkedIn posts (manual)
-│
-└── README.md              # This file
-```
-
-## 🚀 Quick Start
-
-### 1. Update Your Profile
-
-Edit `data/profile.json`:
-
-```json
-{
-  "name": "Your Name",
-  "tagline": "Your Tagline",
-  "location": "Your City, Country",
-  "github": "your-github-username",
-  "linkedin": "your-linkedin-username",
-  "email": "your.email@example.com",
-  "phone": "your-phone"
-}
-```
-
-### 2. Add Your Projects
-
-Edit `data/projects.json`:
-
-```json
-[
-  {
-    "title": "Project Name",
-    "description": "Brief description of what it does",
-    "github": "https://github.com/username/repo",
-    "tags": ["Tag1", "Tag2", "Tag3"]
-  }
-]
-```
-
-**Important**: Leave `github` as an empty string `""` if the project doesn't have a public repo.
-
-### 3. Add LinkedIn Posts
-
-Edit `data/linkedin_posts.json`:
-
-```json
-[
-  {
-    "title": "Post Title",
-    "url": "https://www.linkedin.com/posts/your-post-url",
-    "date": "2026-01-30"
-  }
-]
-```
-
-### 4. Deploy
-
-Upload all files to any static hosting service:
-
-- **GitHub Pages**: Push to a repo, enable Pages in settings
-- **Netlify**: Drag and drop the folder
-- **Cloudflare Pages**: Connect your Git repo
-- **Vercel**: Import your repository
-
-No build configuration needed. It's all static files.
-
-## 🔄 What Auto-Updates
-
-### ✅ Fully Automated
-- **GitHub contribution graph**: Updates daily automatically
-- **GitHub repositories**: Fetches your latest repos via API
-- **Repository stats**: Stars, forks, languages
-
-### ⚠️ Manual Updates Required
-- **LinkedIn posts**: You must add new posts to `linkedin_posts.json`
-- **Projects**: Add/edit in `projects.json`
-- **Profile info**: Update in `profile.json`
-
-## 🎨 Customization
-
-### Colors
-
-Edit CSS variables in `css/style.css`:
-
-```css
-:root {
-    --bg-primary: #0a0e12;
-    --accent-primary: #00ff88;
-    --accent-secondary: #00d4ff;
-    /* ... more colors */
-}
-```
-
-### Fonts
-
-Current fonts:
-- **Display/Code**: JetBrains Mono (technical, monospace)
-- **Body**: IBM Plex Sans (clean, professional)
-
-To change fonts, update the Google Fonts import in `index.html` and the CSS variables.
-
-### GitHub Contribution Graph
-
-Two options available in `js/github.js`:
-
-**Option 1** (Current): GitHub Chart
-```javascript
-graphImg.src = `https://ghchart.rshah.org/00ff88/${username}`;
-```
-
-**Option 2**: GitHub Readme Activity Graph
-```javascript
-graphImg.src = `https://github-readme-activity-graph.vercel.app/graph?username=${username}&theme=react-dark`;
-```
-
-## 🔧 Advanced Features
-
-### Adding a Blog
-
-1. Create `data/blog.json`:
-```json
-[
-  {
-    "title": "Post Title",
-    "url": "/blog/post-slug.html",
-    "date": "2026-01-30",
-    "excerpt": "Brief description"
-  }
-]
-```
-
-2. Add a new section in `index.html`
-3. Create a loader in `js/blog.js`
-
-### Rate Limit Handling
-
-GitHub API has rate limits (60 requests/hour unauthenticated). If you hit the limit:
-
-1. **Option A**: Add a GitHub Personal Access Token (PAT)
-   - Increases limit to 5000/hour
-   - Add to `js/github.js`:
-   ```javascript
-   const response = await fetch(url, {
-       headers: {
-           'Authorization': 'token YOUR_GITHUB_TOKEN'
-       }
-   });
-   ```
-   
-2. **Option B**: Cache the response
-   - Use localStorage to cache for 1 hour
-   - Reduces API calls
-
-### LinkedIn Automation (Advanced)
-
-To truly automate LinkedIn posts, you need:
-- A backend server
-- LinkedIn OAuth authentication
-- LinkedIn Partner approval
-
-This is overkill for a portfolio. The manual JSON file approach is intentional and professional.
-
-## 📊 Performance
-
-- **No build step**: Instant updates
-- **No dependencies**: 0 KB of node_modules
-- **Pure static**: Blazing fast, CDN-friendly
-- **Lighthouse scores**: 95+ across the board
-
-## 🛠️ Troubleshooting
-
-### GitHub repos not loading
-1. Check your GitHub username in `data/profile.json`
-2. Check browser console for API errors
-3. Verify you're not rate limited (wait 1 hour)
-
-### LinkedIn posts not showing
-1. Verify `data/linkedin_posts.json` exists
-2. Check JSON syntax (use JSONLint)
-3. Ensure URLs are valid
-
-### Styling looks broken
-1. Verify all CSS files are in the correct path
-2. Check browser console for 404 errors
-3. Clear browser cache
-
-## 📝 Maintenance
-
-### Weekly
-- Add new LinkedIn posts to `linkedin_posts.json`
-
-### Monthly
-- Update projects in `projects.json`
-- Review and update skills section
-
-### Yearly
-- Update profile information
-- Refresh color scheme if desired
-- Add new sections as needed
-
-## 🎯 Next Steps
-
-When your portfolio stops being a website and becomes an interface:
-
-1. **Add analytics**: Google Analytics or Plausible
-2. **Add blog**: Markdown to HTML rendering
-3. **Add case studies**: Deep dives into projects
-4. **Add OpenGraph tags**: Better social sharing
-5. **Add dark/light mode toggle**: User preference
-
-## 📄 License
-
-This portfolio template is free to use. Build on it, modify it, make it yours.
-
-## 🤝 Contributing
-
-Found a bug or have a suggestion? This is your portfolio now. Fix it, improve it, scale it.
+<p align="center">
+  <a href="https://github.com/aviral-sri"><img src="https://img.shields.io/badge/GitHub-aviral--sri-181717?style=for-the-badge&logo=github"></a>
+  <a href="https://linkedin.com/in/aviral-sri"><img src="https://img.shields.io/badge/LinkedIn-Aviral%20Srivastava-0A66C2?style=for-the-badge&logo=linkedin"></a>
+  <a href="mailto:yourmail@email.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail"></a>
+</p>
 
 ---
 
-**Built once. Update forever.**
+## 🧠 Who I Am
 
-The point isn't to have the flashiest portfolio. The point is to have a portfolio that showcases your work without becoming work itself.
+I’m a Computer Science undergraduate focused on **Machine Learning, Computer Vision, and Edge AI**.  
+I like models, but I *love* systems — especially when software meets hardware.
 
-Now go build something real.
+I spend my time:
+- pushing ML models to the edge (literally),
+- breaking things until they work in real time,
+- and building tools people can actually use.
+
+🏆 **SIH 2025 Grand Finale Runner-up**  
+📦 **Creator of PyQubit (500+ PyPI downloads)**
+
+---
+
+## ⚙️ What I Build (The Good Stuff)
+
+### 🚁 Edge-AI Drone Perception (SIH 2025)
+<p align="center">
+  <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" width="70%">
+</p>
+
+- Real-time computer vision on embedded hardware  
+- Disaster-response focused perception pipeline  
+- Raspberry Pi + camera + ML + pain → working system  
+
+**Result:** Smart India Hackathon 2025 Finalist & Runner-up
+
+---
+
+### ⚛️ PyQubit — Quantum Computing, Minus the Headache
+<p align="center">
+  <img src="https://media.giphy.com/media/l3vRfNA1p0rvhMSvS/giphy.gif" width="60%">
+</p>
+
+- Open-source Python library for quantum experiments  
+- Designed for clarity, not gatekeeping  
+- 500+ downloads on PyPI  
+
+🔗 https://pypi.org/project/pyqubit/
+
+---
+
+### 🌙 NightOwls — Low-Light Computer Vision
+<p align="center">
+  <img src="https://media.giphy.com/media/26gslU06pF5k0F0di/giphy.gif" width="60%">
+</p>
+
+- Image enhancement under extreme low light  
+- Robust preprocessing + object detection  
+- Focused on *real* camera noise, not clean datasets  
+
+---
+
+### 🧠 Custom Knowledge LLM — Tony Stark Edition
+<p align="center">
+  <img src="https://media.giphy.com/media/8TweEdaxxfuElKkRxz/giphy.gif" width="60%">
+</p>
+
+- Fine-tuned Qwen2.5-3B using **LoRA**  
+- Domain-specific Q&A with custom dataset  
+- Practical demo of LLM customization & deployment  
+
+---
+
+## 🛠️ Tech I Actually Use
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,opencv,tensorflow,pytorch,linux,git,raspberrypi,jupyter&perline=8" />
+</p>
+
+**Core:** Python · Machine Learning · Computer Vision  
+**Specialization:** Edge AI · Real-time Processing · Sensor Fusion  
+**Hardware:** Raspberry Pi · Drones · Embedded Systems  
+
+---
+
+## 📈 GitHub at a Glance
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=aviral-sri&show_icons=true&theme=tokyonight&hide_border=true" height="165"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aviral-sri&theme=tokyonight&hide_border=true" height="165"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=aviral-sri&theme=tokyo-night&hide_border=true" />
+</p>
+
+---
+
+## ✍️ Writing & Thinking
+
+I write occasionally about:
+- building ML systems that don’t collapse in production  
+- edge AI trade-offs nobody mentions  
+- lessons from open-source and hackathons  
+
+📌 Featured posts live on my portfolio.
+
+---
+
+## 🌍 Find Me Elsewhere
+
+- 🌐 Portfolio: https://aviral-sri.github.io/aviral-sri/
+- 💼 LinkedIn: https://linkedin.com/in/aviral-sri
+- 🧑‍💻 GitHub: https://github.com/aviral-sri
+
+---
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:2c5364,100:0f2027&height=90&section=footer&text=Built%20systems%20>%20Buzzwords&fontSize=18&fontColor=ffffff" />
+</p>
